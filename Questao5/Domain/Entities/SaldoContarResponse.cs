@@ -6,9 +6,9 @@ namespace Questao5.Domain.Entities
     {
         public string? IdConta { get; set; }
         public int NumeroConta { get; set; }
-        public string NumeTitular { get; set; }
-        public DateTime DataConsulta { get; set; }
-        public decimal SaltoAtual { get; set; }
+        public string? NomeTitular { get; set; }
+        public string? DataConsulta { get; set; }
+        public decimal SaldoAtual { get; set; }
 
         public HttpStatusCode httpStatusCode { get; set; }
         public ErroResponse? ErroResponse { get; set; }
@@ -17,7 +17,15 @@ namespace Questao5.Domain.Entities
             httpStatusCode = statusCode;
             ErroResponse = erro;
         }
-        public SaldoContarResponse(string IdMovimento)
+        public SaldoContarResponse(string IdConta,int NumConta,string NomTitular, string date,decimal Saldo)
+        {
+            this.IdConta = IdConta;
+            NumeroConta = NumConta;
+            NomeTitular = NomTitular;
+            DataConsulta = date;
+            SaldoAtual = Saldo;
+        }
+        public SaldoContarResponse()
         {
         }
     }

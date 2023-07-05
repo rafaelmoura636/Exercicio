@@ -40,7 +40,6 @@ namespace Questao5.Application.Handlers
             {
                 return new MovimentacaoResponse("", HttpStatusCode.BadRequest, new ErroResponse("Tipo de movimento inválido", "INVALID_TYPE"));
             }
-            //Substituir por um Id de Movimentação vindo do banco
             return new MovimentacaoResponse(MovimentarContaCorrente(request));
 
         }
